@@ -14,6 +14,6 @@ cd /root/stopWar
 ./ddos.sh
 
 crontab - <<__EOFF
-*/7 * * * * cd $HOME/stopWar/ && /usr/bin/git pull
-31 * * * * $HOME/stopWar/ddos.sh
+*/7 * * * * cd /root/stopWar/ && /usr/bin/git pull
+31 * * * * /root/stopWar/ddos.sh
 __EOFF
