@@ -8,8 +8,10 @@ cd /root/stopWar
 
 cat target | while read ip port proto
 do
-    if [ ! X$ip = X -a ! X$port = X -a X$proto = X ] 
+    if [ X$ip = X -o X$port = X -o X$proto = X ]
     then
+	echo $ip $port $proto
+    else
 	/usr/bin/docker run -d alexmon1989/dripper:1.1.1 -s $ip -p $port -t 500 -m $proto >> docker.list
     fi
 done
